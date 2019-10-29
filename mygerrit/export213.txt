@@ -1,0 +1,44 @@
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNTS', 'SELECT * FROM ACCOUNTS');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_EXTERNAL_IDS', 'SELECT * FROM ACCOUNT_EXTERNAL_IDS');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_GROUPS', 'SELECT * FROM ACCOUNT_GROUPS');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_GROUP_BY_ID', 'SELECT * FROM ACCOUNT_GROUP_BY_ID');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_GROUP_BY_ID_AUD', 'SELECT * FROM ACCOUNT_GROUP_BY_ID_AUD');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_GROUP_MEMBERS', 'SELECT * FROM ACCOUNT_GROUP_MEMBERS');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_GROUP_MEMBERS_AUDIT', 'SELECT * FROM ACCOUNT_GROUP_MEMBERS_AUDIT');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_GROUP_NAMES', 'SELECT * FROM ACCOUNT_GROUP_NAMES');
+CALL CSVWRITE('/home/sarah/migrate213/ACCOUNT_PROJECT_WATCHES', 'SELECT * FROM ACCOUNT_PROJECT_WATCHES');
+CALL CSVWRITE('/home/sarah/migrate213/CHANGES', 'SELECT * FROM CHANGES');
+CALL CSVWRITE('/home/sarah/migrate213/CHANGE_MESSAGES', 'SELECT * FROM CHANGE_MESSAGES');
+CALL CSVWRITE('/home/sarah/migrate213/PATCH_COMMENTS', 'SELECT * FROM PATCH_COMMENTS');
+CALL CSVWRITE('/home/sarah/migrate213/PATCH_SETS', 'SELECT * FROM PATCH_SETS');
+CALL CSVWRITE('/home/sarah/migrate213/PATCH_SET_APPROVALS', 'SELECT * FROM PATCH_SET_APPROVALS');
+CALL CSVWRITE('/home/sarah/migrate213/SCHEMA_VERSION', 'SELECT * FROM SCHEMA_VERSION');
+CALL CSVWRITE('/home/sarah/migrate213/SYSTEM_CONFIG', 'SELECT * FROM SYSTEM_CONFIG');
+
+
+    SELECT currval('change_message_id');
+    SELECT currval('change_id');
+    SELECT currval('account_id');
+    SELECT currval('account_group_id');
+
+
+
+CURRVAL('change_message_id')
+ ----------------------------
+ 1
+(1 row; 0 ms)
+gerrit>  CURRVAL('change_id')
+ --------------------
+ 2
+(1 row; 0 ms)
+gerrit>  CURRVAL('account_id')
+ ---------------------
+ 1000001
+(1 row; 0 ms)
+gerrit>  CURRVAL('account_group_id')
+ ---------------------------
+ 2
+(1 row; 0 ms)
+
+
+

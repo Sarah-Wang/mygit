@@ -1,0 +1,55 @@
+ ===========h2===========
+ PUBLIC      | ACCOUNTS                    | TABLE
+ PUBLIC      | ACCOUNT_DIFF_PREFERENCES    | TABLE
+ PUBLIC      | ACCOUNT_EXTERNAL_IDS        | TABLE
+ PUBLIC      | ACCOUNT_GROUPS              | TABLE
+ PUBLIC      | ACCOUNT_GROUP_BY_ID         | TABLE
+ PUBLIC      | ACCOUNT_GROUP_BY_ID_AUD     | TABLE
+ PUBLIC      | ACCOUNT_GROUP_MEMBERS       | TABLE
+ PUBLIC      | ACCOUNT_GROUP_MEMBERS_AUDIT | TABLE
+ PUBLIC      | ACCOUNT_GROUP_NAMES         | TABLE
+ PUBLIC      | ACCOUNT_PATCH_REVIEWS       | TABLE
+ PUBLIC      | ACCOUNT_PROJECT_WATCHES     | TABLE
+ PUBLIC      | ACCOUNT_SSH_KEYS            | TABLE
+ PUBLIC      | CHANGES                     | TABLE
+ PUBLIC      | CHANGE_MESSAGES             | TABLE
+ PUBLIC      | PATCH_COMMENTS              | TABLE
+ PUBLIC      | PATCH_SETS                  | TABLE
+ PUBLIC      | PATCH_SET_ANCESTORS         | TABLE
+ PUBLIC      | PATCH_SET_APPROVALS         | TABLE
+ PUBLIC      | SCHEMA_VERSION              | TABLE
+ PUBLIC      | STARRED_CHANGES             | TABLE
+ PUBLIC      | SUBMODULE_SUBSCRIPTIONS     | TABLE
+ PUBLIC      | SYSTEM_CONFIG               | TABLE
+
+
+
+
+
+=====postgresql==============================================
+ public | account_diff_preferences    | table    | gerrit3
+ public | account_external_ids        | table    | gerrit3
+ public | account_group_by_id         | table    | gerrit3
+ public | account_group_by_id_aud     | table    | gerrit3
+ public | account_group_id            | sequence | gerrit3
+ public | account_group_members       | table    | gerrit3
+ public | account_group_members_audit | table    | gerrit3
+ public | account_group_names         | table    | gerrit3
+ public | account_groups              | table    | gerrit3
+ public | account_id                  | sequence | gerrit3
+ public | account_patch_reviews       | table    | gerrit3
+ public | account_project_watches     | table    | gerrit3
+ public | account_ssh_keys            | table    | gerrit3
+ public | accounts                    | table    | gerrit3
+ public | change_id                   | sequence | gerrit3
+ public | change_message_id           | sequence | gerrit3
+ public | change_messages             | table    | gerrit3
+ public | changes                     | table    | gerrit3
+ public | patch_comments              | table    | gerrit3
+ public | patch_set_ancestors         | table    | gerrit3
+ public | patch_set_approvals         | table    | gerrit3
+ public | patch_sets                  | table    | gerrit3
+ public | schema_version              | table    | gerrit3
+ public | starred_changes             | table    | gerrit3
+ public | submodule_subscriptions     | table    | gerrit3
+ public | system_config               | table    | gerrit3

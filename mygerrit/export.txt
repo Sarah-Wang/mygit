@@ -1,0 +1,27 @@
+    CALL CSVWRITE('/home/sarah/migrate/accounts', 'SELECT registered_on , full_name, preferred_email, maximum_page_size, show_site_header, use_flash_clipboard, download_url, download_command, copy_self_on_email, date_format, time_format, relative_date_in_change_table, diff_view, size_bar_in_change_table, legacycid_in_change_table, review_category_strategy, mute_common_path_prefixes, inactive, account_id FROM accounts');
+    CALL CSVWRITE('/home/sarah/migrate/account_external_ids', 'SELECT  ACCOUNT_ID,EMAIL_ADDRESS,PASSWORD,EXTERNAL_ID FROM account_external_ids');
+    CALL CSVWRITE('/home/sarah/migrate/account_groups', 'SELECT name, description, visible_to_all, group_uuid, owner_group_uuid, group_id FROM account_groups');
+    CALL CSVWRITE('/home/sarah/migrate/account_group_by_id', 'SELECT group_id, include_uuid FROM account_group_by_id');
+    CALL CSVWRITE('/home/sarah/migrate/account_group_by_id_aud', ' SELECT  added_by, removed_by, removed_on, group_id, include_uuid, added_on FROM account_group_by_id_aud');
+    CALL CSVWRITE('/home/sarah/migrate/account_group_members', 'SELECT account_id, group_id FROM account_group_members');
+    CALL CSVWRITE('/home/sarah/migrate/account_group_members_audit', 'SELECT added_by, removed_by, removed_on, account_id, group_id, added_on FROM account_group_members_audit');
+    CALL CSVWRITE('/home/sarah/migrate/account_group_names', 'SELECT group_id, name FROM account_group_names');
+
+    CALL CSVWRITE('/home/sarah/migrate/account_patch_reviews', 'SELECT account_id, change_id, patch_set_id, file_name FROM account_patch_reviews');
+    CALL CSVWRITE('/home/sarah/migrate/account_project_watches', 'SELECT notify_new_changes, notify_all_comments, notify_submitted_changes, notify_new_patch_sets, notify_abandoned_changes, account_id, project_name, filter FROM account_project_watches');
+    CALL CSVWRITE('/home/sarah/migrate/account_ssh_keys', 'SELECT ssh_public_key, valid, account_id, seq FROM account_ssh_keys');
+
+    CALL CSVWRITE('/home/sarah/migrate/change_messages', 'SELECT author_id, written_on, message, patchset_change_id, patchset_patch_set_id, change_id, uuid FROM change_messages');
+    CALL CSVWRITE('/home/sarah/migrate/changes', 'SELECT change_key, created_on, last_updated_on, owner_account_id, dest_project_name, dest_branch_name, status, current_patch_set_id, subject, topic, original_subject, submission_id, row_version, change_id FROM changes');
+    CALL CSVWRITE('/home/sarah/migrate/patch_comments', 'SELECT line_nbr, author_id, written_on, status, side, message, parent_uuid, range_start_line, range_start_character, range_end_line, range_end_character, change_id, patch_set_id, file_name, uuid FROM patch_comments');
+    CALL CSVWRITE('/home/sarah/migrate/patch_set_approvals', 'SELECT value, granted, change_id, patch_set_id, account_id, category_id FROM patch_set_approvals');
+    CALL CSVWRITE('/home/sarah/migrate/patch_sets', 'SELECT revision, uploader_account_id, created_on, draft, groups, push_certficate, change_id, patch_set_id FROM patch_sets');
+    CALL CSVWRITE('/home/sarah/migrate/schema_version', 'SELECT version_nbr, singleton FROM schema_version');
+    CALL CSVWRITE('/home/sarah/migrate/starred_changes', 'SELECT account_id, change_id FROM starred_changes');
+    CALL CSVWRITE('/home/sarah/migrate/submodule_subscriptions', 'SELECT submodule_project_name, submodule_branch_name, super_project_project_name, super_project_branch_name, submodule_path FROM submodule_subscriptions');
+    CALL CSVWRITE('/home/sarah/migrate/system_config', 'SELECT register_email_private_key, site_path  , admin_group_id, anonymous_group_id, registered_group_id, wild_project_name, batch_users_group_id, owner_group_id, admin_group_uuid, batch_users_group_uuid, singleton FROM system_config');
+
+    SELECT currval('change_message_id');
+    SELECT currval('change_id');
+    SELECT currval('account_id');
+    SELECT currval('account_group_id');

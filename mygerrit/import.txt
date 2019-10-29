@@ -1,0 +1,69 @@
+    DELETE FROM account_external_ids;
+    \COPY account_external_ids FROM '/home/sarah/migrate/account_external_ids' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_group_by_id;
+    \COPY account_group_by_id FROM '/home/sarah/migrate/account_group_by_id' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_group_by_id_aud;
+    \COPY account_group_by_id_aud FROM '/home/sarah/migrate/account_group_by_id_aud' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_group_members;
+    \COPY account_group_members FROM '/home/sarah/migrate/account_group_members' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_group_members_audit;
+    \COPY account_group_members_audit FROM '/home/sarah/migrate/account_group_members_audit' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_group_names;
+    \COPY account_group_names FROM '/home/sarah/migrate/account_group_names' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_groups;
+    \COPY account_groups FROM '/home/sarah/migrate/account_groups' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_patch_reviews;
+    \COPY account_patch_reviews FROM '/home/sarah/migrate/account_patch_reviews' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_project_watches;
+    \COPY account_project_watches FROM '/home/sarah/migrate/account_project_watches' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM account_ssh_keys;
+    \COPY account_ssh_keys FROM '/home/sarah/migrate/account_ssh_keys' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM accounts;
+    \COPY accounts FROM '/home/sarah/migrate/accounts' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM change_messages;
+    \COPY change_messages FROM '/home/sarah/migrate/change_messages' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM changes;
+    \COPY changes FROM '/home/sarah/migrate/changes' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM patch_comments;
+    \COPY patch_comments FROM '/home/sarah/migrate/patch_comments' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM patch_set_approvals;
+    \COPY patch_set_approvals FROM '/home/sarah/migrate/patch_set_approvals' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM patch_sets;
+    \COPY patch_sets FROM '/home/sarah/migrate/patch_sets' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM schema_version;
+    \COPY schema_version FROM '/home/sarah/migrate/schema_version' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM starred_changes;
+    \COPY starred_changes FROM '/home/sarah/migrate/starred_changes' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM submodule_subscriptions;
+    \COPY submodule_subscriptions FROM '/home/sarah/migrate/submodule_subscriptions' DELIMITER ',' CSV HEADER;
+
+    DELETE FROM system_config;
+    \COPY system_config FROM '/home/sarah/migrate/system_config' DELIMITER ',' CSV HEADER;
+
+
+
+
+    SELECT setval('change_message_id', 1);
+    SELECT setval('change_id', 8);
+    SELECT setval('account_id', 1000001);
+    SELECT setval('account_group_id', 2);
+
+    \q

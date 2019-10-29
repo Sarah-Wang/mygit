@@ -1,0 +1,50 @@
+DELETE FROM ACCOUNT_GROUPS;
+COPY ACCOUNT_GROUPS(description,group_uuid,name,owner_group_uuid,visible_to_all,group_id,created_on) FROM '/home/sarah/migrate215-pcbugit2/ACCOUNT_GROUPS' DELIMITER ',' CSV HEADER;
+
+DELETE FROM ACCOUNT_GROUP_BY_ID;
+COPY ACCOUNT_GROUP_BY_ID(group_id,include_uuid) FROM '/home/sarah/migrate215-pcbugit2/ACCOUNT_GROUP_BY_ID' DELIMITER ',' CSV HEADER;
+
+DELETE FROM ACCOUNT_GROUP_BY_ID_AUD;
+COPY ACCOUNT_GROUP_BY_ID_AUD(added_by,removed_by,removed_on,group_id,include_uuid,added_on) FROM '/home/sarah/migrate215-pcbugit2/ACCOUNT_GROUP_BY_ID_AUD' DELIMITER ',' CSV HEADER;
+
+DELETE FROM ACCOUNT_GROUP_MEMBERS;
+COPY ACCOUNT_GROUP_MEMBERS(account_id,group_id) FROM '/home/sarah/migrate215-pcbugit2/ACCOUNT_GROUP_MEMBERS' DELIMITER ',' CSV HEADER;
+
+DELETE FROM ACCOUNT_GROUP_MEMBERS_AUDIT;
+COPY ACCOUNT_GROUP_MEMBERS_AUDIT(added_by,removed_by,removed_on,account_id,added_on,group_id) FROM '/home/sarah/migrate215-pcbugit2/ACCOUNT_GROUP_MEMBERS_AUDIT' DELIMITER ',' CSV HEADER;
+
+DELETE FROM ACCOUNT_GROUP_NAMES;
+COPY ACCOUNT_GROUP_NAMES(group_id,name) FROM '/home/sarah/migrate215-pcbugit2/ACCOUNT_GROUP_NAMES' DELIMITER ',' CSV HEADER;
+
+DELETE FROM CHANGES;
+COPY CHANGES(change_key,created_on,current_patch_set_id,dest_branch_name,dest_project_name,last_updated_on,owner_account_id,status,subject,topic,row_version,change_id,original_subject,submission_id,note_db_state,assignee,is_private,work_in_progress,review_started,revert_of) FROM '/home/sarah/migrate215-pcbugit2/CHANGES' DELIMITER ',' CSV HEADER;
+
+DELETE FROM CHANGE_MESSAGES;
+COPY CHANGE_MESSAGES(author_id,message,patchset_change_id,patchset_patch_set_id,written_on,change_id,uuid,tag,real_author) FROM '/home/sarah/migrate215-pcbugit2/CHANGE_MESSAGES' DELIMITER ',' CSV HEADER;
+
+DELETE FROM PATCH_COMMENTS;
+COPY PATCH_COMMENTS(author_id,line_nbr,message,parent_uuid,range_end_character,range_end_line,range_start_character,range_start_line,side,status,written_on,file_name,change_id,patch_set_id,uuid,tag,real_author,unresolved) FROM '/home/sarah/migrate215-pcbugit2/PATCH_COMMENTS' DELIMITER ',' CSV HEADER;
+
+DELETE FROM PATCH_SETS;
+COPY PATCH_SETS(created_on,revision,uploader_account_id,change_id,patch_set_id,groups,push_certificate,description) FROM '/home/sarah/migrate215-pcbugit2/PATCH_SETS' DELIMITER ',' CSV HEADER;
+
+DELETE FROM PATCH_SET_APPROVALS;
+COPY PATCH_SET_APPROVALS(granted,value,account_id,category_id,change_id,patch_set_id,tag,real_account_id,post_submit) FROM '/home/sarah/migrate215-pcbugit2/PATCH_SET_APPROVALS' DELIMITER ',' CSV HEADER;
+
+DELETE FROM SCHEMA_VERSION;
+COPY SCHEMA_VERSION(version_nbr,singleton) FROM '/home/sarah/migrate215-pcbugit2/SCHEMA_VERSION' DELIMITER ',' CSV HEADER;
+
+DELETE FROM SYSTEM_CONFIG;
+COPY SYSTEM_CONFIG(register_email_private_key,site_path,admin_group_id,anonymous_group_id,registered_group_id,wild_project_name,batch_users_group_id,owner_group_id,admin_group_uuid,batch_users_group_uuid,singleton) FROM '/home/sarah/migrate215-pcbugit2/SYSTEM_CONFIG' DELIMITER ',' CSV HEADER;
+
+
+
+
+SELECT setval('change_id', 2);
+SELECT setval('account_id', 1000002);
+SELECT setval('account_group_id', 2);
+
+
+
+
+
